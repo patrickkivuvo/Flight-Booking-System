@@ -39,7 +39,6 @@ export const FooterComp = () => {
             <div>
               <p className='text-2xl font-bold'> 
               <span className='text-yellow-400'>G</span>et in Touch</p>
-              <p className='text-sm'>BUDGET</p>
               <div className='items-center mt-10'>
                 <p className='text-sm ml-2'>Phone: +254 748 481418</p>
                 <p className='text-sm ml-2'>Email: info@flypoa.co.ke</p>

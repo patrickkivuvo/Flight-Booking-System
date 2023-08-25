@@ -1,17 +1,17 @@
 import React from 'react'
-import { LOWEST_FARE_LIST } from '../constants/AppConstants';
+import { PAYMENT_FARE_LIST } from '../constants/PaymentConstants';
 import { ButtonYellowComp } from './ButtonYellowComp';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
-export const LowestFareComp = () => {
+export const PaymentType = () => {
   return ( 
-    <div className='relative h-[80%] px-20 bg-[#1a63a8]'>
-      <p className='text-sm text-center text-white'>CURRENT FARE</p>
+    <div className='h-500 px-20 py-5 bg-slate-600 mt-10'>
+      <p className='text-sm text-center text-white'>MAKE YOUR PAYMENTS</p>
       <p className='text-3xl mt-1 text-center text-white'>
-        Today's Lowest Fare 
+        CHOOSE PAYMENT METHOD 
       </p>
-      <div className='flex absolute bottom-[-100px] ml-[15%]'>
-        {LOWEST_FARE_LIST.map((item) => {
+      <div className='flex absolute mt-3 ml-[15%]'>
+        {PAYMENT_FARE_LIST.map((item) => {
                 return(
                     <div 
                      key={`lowest-fare-${item.id}`} 
@@ -20,12 +20,12 @@ export const LowestFareComp = () => {
                         <img src={item.image} className='h-[150px] w-[150px]  rounded-lg'/>
                         <p className=' mt-2 font-semibold'>{item.heading}</p>
                         <p className=' text-sm'>
-                         <span className=' text-gray-400'>Starting from</span> {''}
-                         <spn className=' text-red-400 font-semibold'>{item.price}</spn>
+                         <span className=' text-yellow-700'>Fly</span> 
+                         <spn className=' text-green-400 font-semibold'>{item.price}</spn>
                         </p>
-                        <Link to = '/userlogin'>
+                        <Link to = '/showcart'>
                           <ButtonYellowComp label={'BOOK NOW'} extraStyle={'mt-5'}/>
-                        </Link>
+                        </Link>                       
                     </div>
                 )
             })

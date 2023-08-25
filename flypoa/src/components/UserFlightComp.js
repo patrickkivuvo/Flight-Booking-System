@@ -6,7 +6,7 @@ import { ButtonYellowComp } from './ButtonYellowComp';
 import { ButtonExitComp } from './ButtonExitComp';
 
 
-<><Link to={"/add-flight"}> ADD FLIGHT </Link><Link to={"/edit-flight/:id"}> UPDATE FLIGHT </Link></>
+<><Link to={"/add-flight"}> BOOK NOW </Link><Link to={"/"}> EXIT </Link></>
 
 const   ListFlightComp = () => {
   const [flights, setFlights] = useState([])
@@ -43,19 +43,21 @@ const   ListFlightComp = () => {
           
   return (
     <div>
-    <h2 className= "text-center text-blue-700"> List Flights</h2>
+      <h2 className= "text-center text-blue-700"> Available Flights</h2>
       <div className='flex '>
-        <div className=' py-2 px-5'>
-          <Link to = '/add-flight' >
-            <ButtonYellowComp  label={'ADD FLIGHT'} extraStyle={'flex '}/>
+      <div className=' py-2 px-5'>
+      <Link to = '/contact' >
+          <ButtonYellowComp  label={'BOOK NOW'} extraStyle={'flex '}/>
           </Link>
-        </div>
-        <div className=' py-2 px-5'>
-          <Link to = '/' >
-            <ButtonExitComp  label={'EXIT'} extraStyle={'flex '}/>
+      </div>
+      <div className=' py-2 px-5'>
+      <Link to = '/' >
+          <ButtonExitComp  label={'EXIT'} extraStyle={'flex '}/>
           </Link>
-        </div>
-      </div>     
+      </div>
+      </div>
+  
+      
       <table className= "w-full text-sm text-left text-gray-500 dark:text-gray-400">
         <thead className='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400'>
           <th  scope="col" class="px-2 py-2"> Flight Id</th>
@@ -70,13 +72,12 @@ const   ListFlightComp = () => {
           <th  scope="col" class="px-2 py-2"> Arrival</th>
           <th  scope="col" class="px-2 py-2"> Duration</th>
           <th  scope="col" class="px-2 py-2"> Seats</th>
-          <th  scope="col" class="px-2 py-2">Actions</th>
         </thead>
         <tbody>
           {
             flights.map(
               flight =>
-                 <tr  class="bg-white border-b dark:border-gray-700" key= {flight.flightId}>
+                 <tr  class="bg-white border-b dark:bg-gray-800 dark:border-gray-700" key= {flight.flightId}>
                     <td class="px-2 py-2 text-gray-900"> {flight.flightId}</td>
                     <td class="px-2 py-2 text-gray-900"> {flight.model}</td>
                     <td class="px-2 py-2 text-gray-900"> {flight.name}</td>
@@ -88,21 +89,7 @@ const   ListFlightComp = () => {
                     <td class="px-2 py-2 text-gray-900"> {flight.departure}</td>
                     <td class="px-2 py-2 text-gray-900"> {flight.arrival}</td>
                     <td class="px-2 py-2 text-gray-900"> {flight.duration}</td>
-                    <td class="px-2 py-2 text-gray-900"> {flight.seats}</td>
-
-                    <td class="px-2 py-2">
-                      <Link className="py-2 px-5 text-sm text-white bg-blue-500 rounded-lg" 
-                        to={{pathname:`/edit-flight/${flight.flightId}`}}> 
-                        Update
-                      </Link>
-                    </td>
-                    <td class="px-2 py-4">           
-                      <button className = "py-2 px-5 text-sm text-white bg-red-500 rounded-lg ml-5" 
-                        onClick={() => deleteFlight(flight.flightId)} 
-                        style = {{marginLeft:"10px"}}>
-                        Delete
-                      </button>
-                    </td>                    
+                    <td class="px-2 py-2 text-gray-900"> {flight.seats}</td>                 
                  </tr>
             )
           }

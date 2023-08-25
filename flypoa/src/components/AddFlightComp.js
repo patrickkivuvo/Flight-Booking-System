@@ -37,7 +37,7 @@ const AddFlightComp = () =>{
          <br /> <br />
          <div className= "bg-white w-[35%] rounded-3xl  shadow shadow-gray-600">
             <div className= "row">
-            <div className= "card col-md-6 offset-md-3 offset-md-3 p-5">
+            <div className= " col-md-6 offset-md-3 offset-md-3 p-5">
                
                <div className= " ">
                   <form onSubmit={handleForm}>
@@ -126,10 +126,10 @@ const AddFlightComp = () =>{
                      <div className= "flex border border-gray-300 px-3 py-3 mt-1 mb-1">
                         <input
                         type= "text"
-                        placeholder= "Enter Luggage"
+                        placeholder= "Enter Price"
                         className='placeholder-gray-700 ml-2 outline-none border-none text-sm w-full'
                         onChange = {(e) =>{
-                           setData({...data,luggage:e.target.value})
+                           setData({...data,price:e.target.value})
                         }}
 
                         >

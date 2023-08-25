@@ -27,7 +27,6 @@ const Form = () => {
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const [errorMessage, setErrorMessage] = useState(false);
     const navigate = useNavigate();
 
 
@@ -35,25 +34,24 @@ const Form = () => {
         event.preventDefault()
         try {
             const res = await axios.post('http://localhost:8080/user-admin' ,data);
-                alert("User Registation Successfully");
-                window.location = '/login'
-            
-           
+            alert("User Registation Successfully");
+            window.location = '/login'
         } catch (error) {
             console.log("data")
             alert('error while trying to regester account');
+          
         }
     }
     console.log(data)
     const handleLog = async (event) =>{
         try {
             event.preventDefault();
-            const res = await axios.get('http://localhost:8080/user-admin');
-            alert("Admin Logged In Successfully");
-            window.location = '/flights'
+            const res = await axios.get('http://localhost:8080/user-admin');           
+            alert("User Logged In Successfully");
+            window.location = '/user-flights'
             
         } catch (error) {
-            alert('error while trying to login');
+            alert('error while trying to logging');
         }
     }
     return (

@@ -14,7 +14,7 @@ public class Flight {
     private String destination;
     private int distance;
     private String days;
-    private String luggage;
+    private String price;
     private String departure;
     private String arrival;
     private String duration;
@@ -77,12 +77,12 @@ public class Flight {
         this.days = days;
     }
 
-    public String getLuggage() {
-        return luggage;
+    public String getPrice() {
+        return price;
     }
 
-    public void setLuggage(String luggage) {
-        this.luggage = luggage;
+    public void setPrice(String price) {
+        this.price = price;
     }
 
     public String getDeparture() {
@@ -127,11 +127,13 @@ public class Flight {
                 ", destination='" + destination + '\'' +
                 ", distance=" + distance +
                 ", days='" + days + '\'' +
-                ", luggage='" + luggage + '\'' +
+                ", luggage='" + price + '\'' +
                 ", departure='" + departure + '\'' +
                 ", arrival='" + arrival + '\'' +
                 ", duration='" + duration + '\'' +
                 ", seats=" + seats +
                 '}';
     }
+
+
 }

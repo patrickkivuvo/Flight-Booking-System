@@ -37,7 +37,7 @@ public class FlightService {
         existingFlight.setDestination(flightRequest.getDestination());
         existingFlight.setDistance(flightRequest.getDistance());
         existingFlight.setDays(flightRequest.getDays());
-        existingFlight.setLuggage(flightRequest.getLuggage());
+        existingFlight.setPrice(flightRequest.getPrice());
         existingFlight.setDeparture(flightRequest.getDeparture());
         existingFlight.setDuration(flightRequest.getDuration());
         existingFlight.setArrival(flightRequest.getArrival());

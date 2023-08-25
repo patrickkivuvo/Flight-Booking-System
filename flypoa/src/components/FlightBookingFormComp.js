@@ -5,6 +5,7 @@ import { IoIosAirplane } from 'react-icons/io';
 import { SiPhotocrowd } from 'react-icons/si';
 import {MdLocationPin, MdEmail} from 'react-icons/md';
 import {BiCalendar, BiPhoneCall} from 'react-icons/bi';
+import {Link} from 'react-router-dom';
 
 
 export const FlightBookingFormComp = () => {
@@ -74,7 +75,9 @@ export const FlightBookingFormComp = () => {
         />
       </div>
       <div className='px-5'>
-        <ButtonYellowComp label={'BOOK NOW'} extraStyle={' mt-1'}/>
+        <Link to = '/userlogin' >
+          <ButtonYellowComp label={'BOOK NOW'} extraStyle={' mt-1'}/>
+        </Link>
       </div>
   </div>;
   

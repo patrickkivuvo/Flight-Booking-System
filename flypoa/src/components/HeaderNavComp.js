@@ -42,7 +42,7 @@ export const HeaderNavComp = () => {
         </div>
       </a>
       <div className=' py-2 px-5 ml-5'>
-      <Link to = '/' >
+      <Link to = '/userlogin' >
           <ButtonYellowComp label={'USER'} extraStyle={'flex '}/>
           </Link>
       </div>
